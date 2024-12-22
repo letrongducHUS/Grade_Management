@@ -7,7 +7,7 @@ class RequestResetPasswordController {
     private $model;
 
     public function __construct($conn) {
-        $this->model = new No2_RequestResetPasswordModel($conn);
+        $this->model = new RequestResetPasswordModel($conn);
     }
 
     public function handleRequest() {
