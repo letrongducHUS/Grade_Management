@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $hashedPassword = md5($newPassword);
                     if ($model->updatePassword($username, $hashedPassword)) {
                         echo "<script>alert('Mật khẩu đã được cập nhật thành công');</script>";
+
                     } else {
                         echo "<script>alert('Lỗi khi cập nhật mật khẩu');</script>";
                     }

@@ -27,7 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = "Hãy nhập password tối thiểu 6 ký tự";
         echo "<script type='text/javascript'>alert('$error');</script>";
     } else {
-        if ($model->login($username, $password)) {
+        $md5_password = md5($password);
+        if ($model->login($username, $md5_password)) {
             $_SESSION['user'] = $username;
             date_default_timezone_set('Asia/Ho_Chi_Minh');
             $_SESSION['login_time'] = date('Y-m-d H:i');

@@ -37,7 +37,7 @@ class RequestResetPasswordController {
                 if (!empty($admin['reset_password_token'])) {
                     $message = "Yêu cầu reset mật khẩu đã được gửi trước đó";
                     echo "<script type='text/javascript'>alert('$message');</script>";
-                    echo "<script type='text/javascript'>window.location.href = 'Login.php';</script>";
+                    echo "<script type='text/javascript'>window.location.href = '../view/LoginView.php';</script>";
                 } else {
                     $resetToken = microtime(true);
                     if ($this->model->updateResetToken($username, $resetToken)) {
@@ -45,7 +45,7 @@ class RequestResetPasswordController {
                         $_SESSION['username'] = $username;
                         $message = "Yêu cầu reset mật khẩu thành công";
                         echo "<script type='text/javascript'>alert('$message');</script>";
-                        echo "<script type='text/javascript'>window.location.href = 'Login.php';</script>";
+                        echo "<script type='text/javascript'>window.location.href = '../view/LoginView.php';</script>";
                         exit;
                     } else {
                         $message = "Lỗi: " . $this->conn->error;
