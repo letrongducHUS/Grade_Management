@@ -4,7 +4,6 @@ require_once '../model/HomeModel.php';
 $user = HomeModel::getUserInfo();
 
 if (!$user) {
-    echo "<script type='text/javascript'>alert('Không có thông tin người dùng. Vui lòng đăng nhập lại.');</script>";
     header('Location: LoginView.php');
     exit();
 }
