@@ -20,7 +20,7 @@ if (!$user) {
 </head>
 <body>
 <div class="header">
-    <h2>Chào mừng, <?= htmlspecialchars($user['user']) ?></h2>
+    <p>Tên login: <?= htmlspecialchars($user['user']) ?></p>
     <p>Thời gian login: <?= htmlspecialchars($user['login_time']) ?></p>
 </div>
 
@@ -36,11 +36,21 @@ if (!$user) {
     </thead>
     <tbody>
     <tr>
-        <td><a href="#">Tìm kiếm</a> | <a href="#">Thêm mới</a></td>
-        <td><a href="#">Tìm kiếm</a> | <a href="#">Thêm mới</a></td>
-        <td><a href="#">Tìm kiếm</a> | <a href="#">Thêm mới</a></td>
-        <td><a href="#">Tìm kiếm</a> | <a href="#">Thêm mới</a></td>
-        <td><a href="#">Tìm kiếm</a> | <a href="#">Thêm điểm</a></td>
+        <td> <a href="#">Tìm kiếm</a>  <br>
+            <a href="#">Thêm mới</a>
+        </td>
+        <td> <a href="#">Tìm kiếm</a> <br>
+            <a href="#">Thêm mới</a>
+        </td>
+        <td> <a href="#">Tìm kiếm</a> <br>
+            <a href="#">Thêm mới</a>
+        </td>
+        <td> <a href="#">Tìm kiếm</a> <br>
+            <a href="#">Thêm mới</a>
+        </td>
+        <td> <a href="#">Tìm kiếm</a> <br>
+            <a href="#">Thêm điểm</a>
+        </td>
     </tr>
     </tbody>
 </table>
