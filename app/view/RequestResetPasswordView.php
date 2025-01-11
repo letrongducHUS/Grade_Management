@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../web/ResetPassword.css">
 </head>
 <body>
-<div>
+<div class="request-reset-password">
     <?php if (!isset($_SESSION['reset_token'])) { ?>
         <form action="../controller/RequestResetPasswordController.php" method="POST">
             <label for="username" >Người dùng:</label>
@@ -15,7 +15,7 @@
             <br>
             <input type="text" id="username" name="username"/>
             <br>
-            <input type="submit" value="Gửi yêu cầu reset password" />
+            <input type="submit" id="submit-request" value="Gửi yêu cầu reset password" />
         </form>
     <?php }  ?>
 </div>

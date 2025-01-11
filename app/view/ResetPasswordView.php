@@ -1,11 +1,3 @@
-<?php
-require_once "../model/ResetPasswordModel.php";
-
-$model = new ResetPasswordModel("localhost", "root", "", "quanlydiem");
-
-$admins = $model->getAdminsWithResetTokens();
-?>
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -23,7 +15,13 @@ $admins = $model->getAdminsWithResetTokens();
             <th>Mật khẩu mới</th>
             <th>Action</th>
         </tr>
-        <?php if (isset($admins) && $admins->num_rows > 0): ?>
+        <?php
+        require_once "../model/ResetPasswordModel.php";
+
+        $model = new ResetPasswordModel("localhost", "root", "", "quanlydiem");
+
+        $admins = $model->getAdminsWithResetTokens();
+        if (isset($admins) && $admins->num_rows > 0): ?>
             <?php $i = 1; ?>
             <?php while ($row = $admins->fetch_assoc()): ?>
                 <tr>
@@ -42,5 +40,8 @@ $admins = $model->getAdminsWithResetTokens();
         <?php endif; ?>
     </table>
 </form>
+<div class="center-container">
+    <button id="return-home" onclick="location.href='HomeView.php'">Trở về trang chủ</button>
+</div>
 </body>
 </html>
